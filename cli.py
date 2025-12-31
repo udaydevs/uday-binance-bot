@@ -28,6 +28,12 @@ LOG_PATH = Path("logs")
 
 
 def configure_logging(verbose: bool = False) -> None:
+    """
+    Docstring for configure_logging
+    
+    :param verbose: Description
+    :type verbose: bool
+    """
     LOG_PATH.mkdir(exist_ok=True)
     log_file = LOG_PATH / f"bot_{datetime.now():%Y%m%d}.log"
 
@@ -39,6 +45,9 @@ def configure_logging(verbose: bool = False) -> None:
 
 
 def banner() -> None:
+    """
+    Docstring for banner
+    """
     panel = Panel.fit(
             "Binance Futures Trading CLI",
             title="Trading Bot",
@@ -48,6 +57,7 @@ def banner() -> None:
 
 
 def result_table(title: str, data: Dict) -> None:
+    """Create a table"""
     if not data:
         console.print("No response received. Check logs.")
         return
@@ -69,6 +79,9 @@ def result_table(title: str, data: Dict) -> None:
 
 
 def input_values(limit=False, oco=False):
+    """
+    Input values are defined here
+    """
     symbol = Prompt.ask("Symbol", default="BTCUSDT").upper()
     side = Prompt.ask("Side", choices=["BUY", "SELL"]).upper()
     qty = float(Prompt.ask("Quantity"))
@@ -86,6 +99,9 @@ def input_values(limit=False, oco=False):
 
 
 def handle_market(bot: BinanceBot) -> None:
+    """
+    Handle Market Order
+    """
     symbol, side, qty, *_ = input_values()
 
     if Confirm.ask("Confirm order execution?"):
@@ -94,6 +110,9 @@ def handle_market(bot: BinanceBot) -> None:
 
 
 def handle_limit(bot: BinanceBot) -> None:
+    """
+    Handle Limit Order
+    """
     symbol, side, qty, price, *_ = input_values(limit=True)
 
     if Confirm.ask("Confirm order execution?"):
@@ -102,6 +121,9 @@ def handle_limit(bot: BinanceBot) -> None:
 
 
 def handle_oco(bot: BinanceBot) -> None:
+    """
+    Handle OCO Order
+    """
     symbol, side, qty, _, tp, sl = input_values(oco=True)
 
     if Confirm.ask("Confirm order execution?"):
@@ -111,6 +133,9 @@ def handle_oco(bot: BinanceBot) -> None:
 
 
 def connection_status(bot: BinanceBot) -> None:
+    """
+    Check connection status
+    """
     with Progress(SpinnerColumn(), TextColumn("Checking connection...")) as p:
         p.add_task("", total=None)
         status = bot.check_connection()
@@ -122,6 +147,9 @@ def connection_status(bot: BinanceBot) -> None:
 
 
 def interactive_menu(bot: BinanceBot) -> None:
+    """
+    A menu is defined here
+    """
     while True:
         tree = Tree("Main Menu")
         trading = tree.add("Trading")
@@ -149,6 +177,9 @@ def interactive_menu(bot: BinanceBot) -> None:
 
 
 def execute_command(bot: BinanceBot, args: argparse.Namespace) -> None:
+    """
+    Execution of commands are defined here
+    """
     if args.command == "market":
         res = MarketOrder(bot).place_order(args.symbol, args.side, args.qty)
         result_table("Market Order", res)
@@ -166,6 +197,9 @@ def execute_command(bot: BinanceBot, args: argparse.Namespace) -> None:
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """
+    Argument parsers are intialized
+    """
     parser = argparse.ArgumentParser(description="Binance Trading CLI")
 
     parser.add_argument("-i", "--interactive", action="store_true", help="Interactive menu mode")
@@ -196,6 +230,9 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> None:
+    """
+    Docstring for main
+    """
     parser = build_parser()
     args = parser.parse_args()
 
