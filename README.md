@@ -34,7 +34,6 @@ This project was built as part of the **Junior Python Developer – Crypto Tradi
 project_root/
 │
 ├── src/
-│   ├── cli.py                  # CLI entry point
 │   ├── client.py               # Binance client (Testnet)
 │   ├── market_order.py         # Market order logic
 │   ├── limit_order.py          # Limit order logic
@@ -43,10 +42,10 @@ project_root/
 │   │   ├── validators.py       # Input validation
 │   │   └── __init__.py
 │   ├── advanced/
-│   │   ├── oco.py               # OCO order implementation
+│   │   ├── oco.py              # OCO order implementation
 │   │   └── __init__.py
 │   └── __init__.py
-│
+├── cli.py                      # CLI entry point
 ├── bot.log                     # Log file 
 ├── .gitignore
 └── README.md
@@ -69,7 +68,7 @@ cd binance-futures-bot
 
 ```bash
 python -m venv venv
-source venv/bin/activate #Activate the virtual environment
+source venv/bin/activate  #Activate the virtual environment
 ```
 
 ### 3. Install Required Dependencies
