@@ -60,7 +60,7 @@ Follow the steps below to install and set up the Binance Futures Trading Bot loc
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/binance-futures-bot.git
+git clone https://github.com/udaydevs/uday-binance-bot.git
 cd binance-futures-bot
 ```
 
