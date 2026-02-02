@@ -18,10 +18,10 @@ from rich.table import Table
 from rich.tree import Tree
 from rich import box
 
-from src.client import BinanceBot
-from src.market_order import MarketOrder
-from src.limit_order import LimitOrder
-from src.advanced.oco import OCOOrder
+from bot.client import BinanceBot
+from bot.market_order import MarketOrder
+from bot.limit_order import LimitOrder
+from bot.advanced.oco import OCOOrder
 
 console = Console()
 LOG_PATH = Path("logs")

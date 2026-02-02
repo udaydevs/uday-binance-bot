@@ -1,8 +1,8 @@
 """Limit Order Module for Binance Futures Trading Bot"""
 
-from src.utils.logging import configure_logs, get_logger
-from src.client import BinanceBot
-from src.utils.validators import Validator
+from bot.utils.logging_config import configure_logs, get_logger
+from bot.client import BinanceBot
+from bot.utils.validators import Validator
 
 
 configure_logs(verbose=True)

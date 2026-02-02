@@ -2,7 +2,7 @@
 Improved OCO Orders: Auto-detect price and prevent trigger errors.
 """
 
-from src.utils.logging import configure_logs, get_logger
+from bot.utils.logging_config import configure_logs, get_logger
 from ..client import BinanceBot
 
 configure_logs(verbose=True)

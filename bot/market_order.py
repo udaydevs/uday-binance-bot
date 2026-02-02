@@ -1,7 +1,7 @@
 """Market Order file for Binance Trading Bot"""
-from src.client import BinanceBot
-from src.utils.logging import configure_logs, get_logger
-from src.utils.validators import Validator
+from bot.client import BinanceBot
+from bot.utils.logging_config import configure_logs, get_logger
+from bot.utils.validators import Validator
 
 
 configure_logs(verbose=True)

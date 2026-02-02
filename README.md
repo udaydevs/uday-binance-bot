@@ -33,12 +33,12 @@ This project was built as part of the **Junior Python Developer – Crypto Tradi
 ```text
 project_root/
 │
-├── src/
+├── bot/
 │   ├── client.py               # Binance client (Testnet)
 │   ├── market_order.py         # Market order logic
 │   ├── limit_order.py          # Limit order logic
 │   ├── utils/
-│   │   ├── logging.py          # Logging configuration
+│   │   ├── logging_config.py          # Logging configuration
 │   │   ├── validators.py       # Input validation
 │   │   └── __init__.py
 │   ├── advanced/

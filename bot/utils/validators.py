@@ -4,7 +4,7 @@ Validators for Binance trading bot with logging
 
 from typing import Optional
 from binance.client import Client
-from src.utils.logging import get_logger
+from bot.utils.logging_config import get_logger
 
 logger = get_logger()
 

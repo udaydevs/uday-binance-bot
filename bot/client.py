@@ -4,8 +4,8 @@ Binance trading bot client is initialized here
 import os
 from binance.client import Client
 from dotenv import load_dotenv
-from src.utils.logging import configure_logs, get_logger
-from src.utils.validators import Validator
+from bot.utils.logging_config import configure_logs, get_logger
+from bot.utils.validators import Validator
 
 load_dotenv()
 configure_logs(verbose=True)
